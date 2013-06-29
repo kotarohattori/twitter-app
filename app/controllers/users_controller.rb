@@ -1,15 +1,10 @@
 # -*- coding: utf-8 -*-
 class UsersController < ApplicationController
   def index
+    @users = User.all
   end
 
   def show
-    @user = {
-      :name => '鈴木遼さん',
-      :username => 'ryooopan',
-      :location => '日本,三鷹',
-      :age => '24才',
-      :tokugi => 'プログラミング'
-    }
+    @user = User.find(params[:id])
   end
 end
